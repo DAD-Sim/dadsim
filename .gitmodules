@@ -1,0 +1,36 @@
+[submodule "core/dadsim_timed"]
+	path = core/dadsim_timed
+	url = git@github.com:DAD-Sim/dadsim_timed.git
+[submodule "core/dadsim_mapd_odr"]
+	path = core/dadsim_mapd_odr
+	url = git@github.com:DAD-Sim/dadsim_mapd_odr.git
+[submodule "core/dadsim_object_manager"]
+	path = core/dadsim_object_manager
+	url = git@github.com:DAD-Sim/dadsim_object_manager.git
+[submodule "core/dadsim_scheduler"]
+	path = core/dadsim_scheduler
+	url = git@github.com:DAD-Sim/dadsim_scheduler.git
+[submodule "interfaces/dadsim_timed_interfaces"]
+	path = interfaces/dadsim_timed_interfaces
+	url = git@github.com:DAD-Sim/dadsim_timed_interfaces.git
+[submodule "interfaces/dadsim_mapd_interfaces"]
+	path = interfaces/dadsim_mapd_interfaces
+	url = git@github.com:DAD-Sim/dadsim_mapd_interfaces.git
+[submodule "interfaces/dadsim_object_manager_interfaces"]
+	path = interfaces/dadsim_object_manager_interfaces
+	url = git@github.com:DAD-Sim/dadsim_object_manager_interfaces.git
+[submodule "interfaces/dadsim_scheduler_interfaces"]
+	path = interfaces/dadsim_scheduler_interfaces
+	url = git@github.com:DAD-Sim/dadsim_scheduler_interfaces.git
+[submodule "utils/dadsim_agents_py"]
+	path = utils/dadsim_agents_py
+	url = git@github.com:DAD-Sim/dadsim_agents_py.git
+[submodule "utils/dadsim_chassises_py"]
+	path = utils/dadsim_chassises_py
+	url = git@github.com:DAD-Sim/dadsim_chassises_py.git
+[submodule "add-on/traffic_manager/dadsim_traffic_manager"]
+	path = add-on/traffic_manager/dadsim_traffic_manager
+	url = git@github.com:DAD-Sim/dadsim_traffic_manager.git
+[submodule "add-on/traffic_manager/dadsim_traffic_manager_interfaces"]
+	path = add-on/traffic_manager/dadsim_traffic_manager_interfaces
+	url = git@github.com:DAD-Sim/dadsim_traffic_manager_interfaces.git
