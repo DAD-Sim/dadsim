@@ -1,9 +1,6 @@
 [submodule "core/dadsim_timed"]
 	path = core/dadsim_timed
 	url = git@github.com:DAD-Sim/dadsim_timed.git
-[submodule "core/dadsim_mapd_odr"]
-	path = core/dadsim_mapd_odr
-	url = git@github.com:DAD-Sim/dadsim_mapd_odr.git
 [submodule "core/dadsim_object_manager"]
 	path = core/dadsim_object_manager
 	url = git@github.com:DAD-Sim/dadsim_object_manager.git
@@ -34,3 +31,6 @@
 [submodule "add-on/traffic_manager/dadsim_traffic_manager_interfaces"]
 	path = add-on/traffic_manager/dadsim_traffic_manager_interfaces
 	url = git@github.com:DAD-Sim/dadsim_traffic_manager_interfaces.git
+[submodule "add-on/mapd_odr/dadsim_mapd_odr"]
+	path = add-on/mapd_odr/dadsim_mapd_odr
+	url = git@github.com:DAD-Sim/dadsim_mapd_odr.git
