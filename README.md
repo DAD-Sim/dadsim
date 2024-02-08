@@ -15,3 +15,19 @@ git submodule update --init --recursive
 colcon build
 ```
 6. Enjoy!
+
+## Start-up
+
+Launch the test file:
+```shell
+ros2 launch dadsim test.launch.py
+```
+Open RViz and add following topics:
+- /map_visualize
+- /agents
+- /agents_array
+You will see 10 white cars and 1 green car. You can control the green one by:
+```shell
+ros2 run dadsim ackermann_teleop
+```
+Use W/A/S/D to drive it!

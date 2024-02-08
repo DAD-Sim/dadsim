@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>dadsim</name>
+  <version>0.0.0</version>
+  <description>Meta package of the Distributed Autonomous Driving Simulator</description>
+  <maintainer email="rl_wang@mail.ustc.edu.cn">ustc</maintainer>
+  <license>TODO: License declaration</license>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <depend>dadsim_timed</depend>
+  <depend>dadsim_timed_interfaces</depend>
+  <depend>dadsim_mapd_odr</depend>
+  <depend>dadsim_mapd_interfaces</depend>
+  <depend>dadsim_scheduler</depend>
+  <depend>dadsim_scheduler_interfaces</depend>
+  <depend>dadsim_object_manager</depend>
+  <depend>dadsim_object_manager_interfaces</depend>
+  <depend>dadsim_agents_py</depend>
+  <depend>dadsim_chassises_py</depend>
+  <depend>dadsim_traffic_manager</depend>
+  <depend>dadsim_traffic_manager_interfaces</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
