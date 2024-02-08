@@ -26,6 +26,7 @@ Open RViz and add following topics:
 - /map_visualize
 - /agents
 - /agents_array
+
 You will see 10 white cars and 1 green car. You can control the green one by:
 ```shell
 ros2 run dadsim ackermann_teleop
