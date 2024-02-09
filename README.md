@@ -1,5 +1,5 @@
 # dadsim
-Meta-package of DADSim
+![](pic/demo.gif)
 
 ## Install
 
