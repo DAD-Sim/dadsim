@@ -1,0 +1,30 @@
+agent_num: 20
+seed: 0
+minimal_distance: 2.0
+blueprints:
+  - weight: 1.0
+    blueprint:
+      width: 2.0
+      length: 4.0
+spawn_area:
+  - road_id: "145"
+    lane_section: 0
+    lane: -1
+    start: 0.0
+    end: 330.0
+  - road_id: "121"
+    lane_section: 0
+    lane: -1
+    start: 0.0
+    end: 330.0
+  - road_id: "145"
+    lane_section: 0
+    lane: -2
+    start: 0.0
+    end: 330.0
+  - road_id: "121"
+    lane_section: 0
+    lane: -2
+    start: 0.0
+    end: 330.0
+

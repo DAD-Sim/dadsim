@@ -28,7 +28,7 @@ def generate_launch_description():
             executable='mapd',
             name='mapd',
             parameters=[{
-                'odr_map_path': PathJoinSubstitution([FindPackageShare("dadsim_mapd_odr"), "maps", "infinity.xodr"])
+                'odr_map_path': PathJoinSubstitution([FindPackageShare("dadsim_mapd_odr"), "maps", "sparrow.xodr"])
             }]
         ),
         Node(
@@ -43,7 +43,7 @@ def generate_launch_description():
             executable='traffic_provider',
             name='traffic_provider',
             parameters=[{
-                'config_file': PathJoinSubstitution([FindPackageShare("dadsim_traffic_manager"), "config", "config.yaml"])
+                'config_file': PathJoinSubstitution([FindPackageShare("dadsim"), "config", "config.yaml"])
             }],
         ),
         Node(
@@ -68,9 +68,9 @@ def generate_launch_description():
             emulate_tty=True,
             output='screen',
             arguments= [
-                '508',
-                '500.0',
-                '-2.0',
+                '126',
+                '8.0',
+                '-1.5',
             ]
         )
     ])
