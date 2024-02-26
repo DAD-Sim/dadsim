@@ -27,4 +27,6 @@ spawn_area:
     lane: -2
     start: 0.0
     end: 330.0
-
+speed_profile:
+  limit_ratio: 0.8
+  default_speed: 10.0

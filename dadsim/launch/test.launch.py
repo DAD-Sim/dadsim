@@ -56,6 +56,7 @@ def generate_launch_description():
                 'target_range': 50.0,
                 'expand_range': 20.0,
                 'priority': 1,
+                'config_file': PathJoinSubstitution([FindPackageShare("dadsim"), "config", "config.yaml"])
             }],
             emulate_tty=True,
             output='screen',
