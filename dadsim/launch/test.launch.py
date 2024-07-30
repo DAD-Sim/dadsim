@@ -43,7 +43,7 @@ def generate_launch_description():
             executable='traffic_provider',
             name='traffic_provider',
             parameters=[{
-                'config_file': PathJoinSubstitution([FindPackageShare("dadsim"), "config", "config.yaml"])
+                'config_file': PathJoinSubstitution([FindPackageShare("dadsim"), "config", "config.tp.yaml"])
             }],
         ),
         Node(
@@ -56,7 +56,7 @@ def generate_launch_description():
                 'target_range': 50.0,
                 'expand_range': 20.0,
                 'priority': 1,
-                'config_file': PathJoinSubstitution([FindPackageShare("dadsim"), "config", "config.yaml"])
+                'config_file': PathJoinSubstitution([FindPackageShare("dadsim"), "config", "config.tm.yaml"])
             }],
             emulate_tty=True,
             output='screen',

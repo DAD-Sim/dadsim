@@ -1,0 +1,3 @@
+speed_profile:
+  limit_ratio: 0.8
+  default_speed: 10.0
