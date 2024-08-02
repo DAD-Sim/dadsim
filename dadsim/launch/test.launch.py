@@ -21,7 +21,10 @@ def generate_launch_description():
         Node(
             package='dadsim_scheduler',
             executable='scheduler',
-            name='scheduler'
+            name='scheduler',
+            parameters=[{
+                'pre_start_time': 1.0,
+            }],
         ),
         Node(
             package='dadsim_mapd_odr',
