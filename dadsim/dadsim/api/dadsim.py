@@ -14,7 +14,7 @@ class DadsimInstance(object):
         self._launch_service : launch.LaunchService = None
         self._launch_future = None
         self._exit_future = None
-        self._launch_file_path = launch_file_path
+        self._launch_file_path = get_share_file_path_from_package(package_name='dadsim', file_name='test.launch.py') if launch_file_path is None else launch_file_path
         self._running = False
         self._launch_task = None
         
@@ -40,8 +40,8 @@ class DadsimInstance(object):
         self._launch_task = asyncio.create_task(self._run())
     
     async def _run(self):
-        launch_file_path = get_share_file_path_from_package(package_name='dadsim', file_name='test.launch.py') if self._launch_file_path is None else self._launch_file_path
-        self._launch_future = asyncio.gather(self._launch_a_launch_file_async(launch_file_path=launch_file_path, launch_file_arguments=[]))
+        
+        self._launch_future = asyncio.gather(self._launch_a_launch_file_async(launch_file_path=self._launch_file_path, launch_file_arguments=[]))
         self._exit_future = asyncio.get_running_loop().create_future()
         ret = None
         ret = await self._launch_future
