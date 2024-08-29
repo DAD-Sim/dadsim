@@ -19,8 +19,11 @@ class DadsimInstance(object):
         self._launch_task = None
         
         if quiet:
+            os.environ['DADSIM_QUIET'] = 'True'
             screen_handler = logging.NullHandler()
             launch.logging.launch_config.screen_handler = screen_handler
+        else:
+            os.environ['DADSIM_QUIET'] = 'False'
     
     def exception(self):
         try:
