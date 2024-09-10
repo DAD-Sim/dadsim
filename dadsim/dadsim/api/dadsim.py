@@ -4,19 +4,21 @@ import launch
 from launch.launch_context import LaunchContext
 from launch.events.process.process_exited import ProcessExited
 from launch.event_handlers import OnProcessExit
+from launch_ros.actions import PushRosNamespace
 import launch.logging
 import logging
 import logging.handlers
 import os
 
 class DadsimInstance(object):
-    def __init__(self, launch_file_path=None, quiet=False):
+    def __init__(self, launch_file_path=None, quiet=False, namespace=None):
         self._launch_service : launch.LaunchService = None
         self._launch_future = None
         self._exit_future = None
         self._launch_file_path = get_share_file_path_from_package(package_name='dadsim', file_name='test.launch.py') if launch_file_path is None else launch_file_path
         self._running = False
         self._launch_task = None
+        self._namespace = namespace
         
         if quiet:
             os.environ['DADSIM_QUIET'] = 'True'
@@ -38,13 +40,13 @@ class DadsimInstance(object):
     def running(self):
         return self._running
     
-    def run(self):
+    def run(self, arguments=[]):
         self._running = True
-        self._launch_task = asyncio.create_task(self._run())
+        self._launch_task = asyncio.create_task(self._run(arguments=arguments))
     
-    async def _run(self):
+    async def _run(self, arguments=[]):
         
-        self._launch_future = asyncio.gather(self._launch_a_launch_file_async(launch_file_path=self._launch_file_path, launch_file_arguments=[]))
+        self._launch_future = asyncio.gather(self._launch_a_launch_file_async(launch_file_path=self._launch_file_path, launch_file_arguments=arguments))
         self._exit_future = asyncio.get_running_loop().create_future()
         ret = None
         ret = await self._launch_future
@@ -83,13 +85,17 @@ class DadsimInstance(object):
         parsed_launch_arguments = parse_launch_arguments(launch_file_arguments)
         # Include the user provided launch file using IncludeLaunchDescription so that the
         # location of the current launch file is set.
-        launch_description = launch.LaunchDescription([
-            launch.actions.IncludeLaunchDescription(
-                launch.launch_description_sources.AnyLaunchDescriptionSource(
-                    launch_file_path
-                ),
-                launch_arguments=parsed_launch_arguments,
+        include_launch = launch.actions.IncludeLaunchDescription(
+            launch.launch_description_sources.AnyLaunchDescriptionSource(
+                launch_file_path
             ),
+            launch_arguments=parsed_launch_arguments,
+        )
+        launch_description = launch.LaunchDescription([
+            PushRosNamespace(namespace=self._namespace),
+            include_launch
+        ] if self._namespace is not None else [
+            include_launch
         ])
         launch_description.add_action(launch.actions.RegisterEventHandler(
             event_handler=OnProcessExit(
